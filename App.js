@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { useFonts } from 'expo-font';
 
 export default function App() {
@@ -10,13 +10,20 @@ export default function App() {
     'karla-light': require('./assets/fonts/Karla-ExtraLight.ttf')
   })
 
+  if(!fontsLoaded){
+    return <Text>Loading fonts..</Text>
+  }
+
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+
       <View style={styles.div}>
         <Text style={styles.titleText}>Title</Text>
       </View>
+
+
     </View>
   );
 }
